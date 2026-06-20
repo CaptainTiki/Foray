@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UnitClassData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/unit_class_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Cleric"
+class_type = 3
+max_hp = 18
+attack = 0
+speed = 3
+heal_amount = 4
+target_mode = 0
+splash_radius = 0
+splash_multiplier = 0.0
+color = Color(0.86, 0.78, 0.36, 1)

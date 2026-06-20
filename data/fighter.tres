@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UnitClassData" format=3 uid="uid://corudxg5wjxco"]
+
+[ext_resource type="Script" uid="uid://crlxeig72voab" path="res://scripts/unit_class_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Fighter"
+max_hp = 30
+attack = 5
+speed = 4
+color = Color(0.81, 0.34, 0.31, 1)

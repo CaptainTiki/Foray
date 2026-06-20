@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UnitClassData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/unit_class_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Ranger"
+class_type = 2
+max_hp = 20
+attack = 6
+speed = 5
+heal_amount = 0
+target_mode = 2
+splash_radius = 0
+splash_multiplier = 0.0
+color = Color(0.45, 0.68, 0.38, 1)

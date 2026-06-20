@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UnitClassData" format=3 uid="uid://dhnc848heod35"]
+
+[ext_resource type="Script" uid="uid://crlxeig72voab" path="res://scripts/unit_class_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Mage"
+class_type = 1
+max_hp = 13
+attack = 7
+speed = 4
+target_mode = 1
+color = Color(0.36, 0.51, 0.83, 1)

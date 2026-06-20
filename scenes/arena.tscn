@@ -1,0 +1,157 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0arenafray001"]
+
+[ext_resource type="Script" path="res://scripts/arena.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/battle_manager.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://b0slotfray001" path="res://scenes/slot.tscn" id="3"]
+
+[node name="Arena" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="BattleManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2")
+
+[node name="Timer" type="Timer" parent="BattleManager"]
+unique_name_in_owner = true
+wait_time = 1.0
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Main" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Margin/Main"]
+layout_mode = 2
+text = "Foray — Battle Arena"
+horizontal_alignment = 1
+
+[node name="Battlefield" type="HBoxContainer" parent="Margin/Main"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="FriendlySide" type="VBoxContainer" parent="Margin/Main/Battlefield"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="FriendlyHeader" type="Label" parent="Margin/Main/Battlefield/FriendlySide"]
+layout_mode = 2
+text = "Your party        rear ←     → front (F1)"
+horizontal_alignment = 2
+
+[node name="FriendlySlots" type="HBoxContainer" parent="Margin/Main/Battlefield/FriendlySide"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="F3" parent="Margin/Main/Battlefield/FriendlySide/FriendlySlots" instance=ExtResource("3")]
+unique_name_in_owner = true
+layout_mode = 2
+team = 0
+index = 3
+
+[node name="F2" parent="Margin/Main/Battlefield/FriendlySide/FriendlySlots" instance=ExtResource("3")]
+unique_name_in_owner = true
+layout_mode = 2
+team = 0
+index = 2
+
+[node name="F1" parent="Margin/Main/Battlefield/FriendlySide/FriendlySlots" instance=ExtResource("3")]
+unique_name_in_owner = true
+layout_mode = 2
+team = 0
+index = 1
+
+[node name="F0" parent="Margin/Main/Battlefield/FriendlySide/FriendlySlots" instance=ExtResource("3")]
+unique_name_in_owner = true
+layout_mode = 2
+team = 0
+index = 0
+
+[node name="Middle" type="CenterContainer" parent="Margin/Main/Battlefield"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VS" type="Label" parent="Margin/Main/Battlefield/Middle"]
+layout_mode = 2
+text = "VS"
+
+[node name="EnemySide" type="VBoxContainer" parent="Margin/Main/Battlefield"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="EnemyHeader" type="Label" parent="Margin/Main/Battlefield/EnemySide"]
+layout_mode = 2
+text = "Enemies        (E1) front ←     → rear"
+horizontal_alignment = 0
+
+[node name="EnemySlots" type="HBoxContainer" parent="Margin/Main/Battlefield/EnemySide"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="E0" parent="Margin/Main/Battlefield/EnemySide/EnemySlots" instance=ExtResource("3")]
+unique_name_in_owner = true
+layout_mode = 2
+team = 1
+index = 0
+
+[node name="E1" parent="Margin/Main/Battlefield/EnemySide/EnemySlots" instance=ExtResource("3")]
+unique_name_in_owner = true
+layout_mode = 2
+team = 1
+index = 1
+
+[node name="E2" parent="Margin/Main/Battlefield/EnemySide/EnemySlots" instance=ExtResource("3")]
+unique_name_in_owner = true
+layout_mode = 2
+team = 1
+index = 2
+
+[node name="E3" parent="Margin/Main/Battlefield/EnemySide/EnemySlots" instance=ExtResource("3")]
+unique_name_in_owner = true
+layout_mode = 2
+team = 1
+index = 3
+
+[node name="HSep" type="HSeparator" parent="Margin/Main"]
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="Margin/Main"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="FightButton" type="Button" parent="Margin/Main/Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Fight"
+
+[node name="ResetButton" type="Button" parent="Margin/Main/Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Reset"
+
+[node name="LogHeader" type="Label" parent="Margin/Main"]
+layout_mode = 2
+text = "Combat Log"
+
+[node name="Log" type="RichTextLabel" parent="Margin/Main"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2
+size_flags_vertical = 3
+scroll_following = true
